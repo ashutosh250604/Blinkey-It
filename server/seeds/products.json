@@ -1,0 +1,304 @@
+[
+  {
+    "name": "Fresh Tomato",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/tomato.jpg"],
+    "categoryName": "Fruits & Vegetables",
+    "subCategoryName": "Fresh Vegetables",
+    "unit": "1 kg",
+    "stock": 100,
+    "price": 40,
+    "discount": 10,
+    "description": "Fresh and juicy tomatoes",
+    "more_details": {
+      "origin": "Local Farm",
+      "shelf_life": "3-5 days"
+    },
+    "publish": true
+  },
+  {
+    "name": "Green Capsicum",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/capsicum.jpg"],
+    "categoryName": "Fruits & Vegetables",
+    "subCategoryName": "Fresh Vegetables",
+    "unit": "500 g",
+    "stock": 80,
+    "price": 60,
+    "discount": 5,
+    "description": "Crunchy green capsicum",
+    "more_details": {
+      "origin": "Local Farm"
+    },
+    "publish": true
+  },
+  {
+    "name": "Fresh Apple - Royal Gala",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/apple.jpg"],
+    "categoryName": "Fruits & Vegetables",
+    "subCategoryName": "Fresh Fruits",
+    "unit": "1 kg",
+    "stock": 120,
+    "price": 180,
+    "discount": 15,
+    "description": "Sweet and crispy royal gala apples",
+    "more_details": {
+      "origin": "Kashmir",
+      "variety": "Royal Gala"
+    },
+    "publish": true
+  },
+  {
+    "name": "Fresh Banana - Robusta",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/banana.jpg"],
+    "categoryName": "Fruits & Vegetables",
+    "subCategoryName": "Fresh Fruits",
+    "unit": "1 dozen",
+    "stock": 200,
+    "price": 60,
+    "discount": 0,
+    "description": "Fresh robusta bananas",
+    "more_details": {
+      "origin": "Local Farm"
+    },
+    "publish": true
+  },
+  {
+    "name": "Amul Gold Full Cream Milk",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/amul-gold.jpg"],
+    "categoryName": "Dairy, Bread & Eggs",
+    "subCategoryName": "Milk",
+    "unit": "1 L",
+    "stock": 150,
+    "price": 66,
+    "discount": 0,
+    "description": "Full cream homogenized toned milk",
+    "more_details": {
+      "brand": "Amul",
+      "fat_content": "6%"
+    },
+    "publish": true
+  },
+  {
+    "name": "Mother Dairy Full Cream Milk",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/mother-dairy.jpg"],
+    "categoryName": "Dairy, Bread & Eggs",
+    "subCategoryName": "Milk",
+    "unit": "1 L",
+    "stock": 130,
+    "price": 68,
+    "discount": 0,
+    "description": "Rich and creamy full cream milk",
+    "more_details": {
+      "brand": "Mother Dairy"
+    },
+    "publish": true
+  },
+  {
+    "name": "Brown Bread",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/brown-bread.jpg"],
+    "categoryName": "Dairy, Bread & Eggs",
+    "subCategoryName": "Bread & Pav",
+    "unit": "400 g",
+    "stock": 90,
+    "price": 45,
+    "discount": 0,
+    "description": "Healthy whole wheat brown bread",
+    "more_details": {
+      "type": "Whole Wheat"
+    },
+    "publish": true
+  },
+  {
+    "name": "Farm Fresh Eggs - Brown",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/eggs.jpg"],
+    "categoryName": "Dairy, Bread & Eggs",
+    "subCategoryName": "Eggs",
+    "unit": "6 pieces",
+    "stock": 200,
+    "price": 48,
+    "discount": 0,
+    "description": "Fresh brown eggs from farm",
+    "more_details": {
+      "type": "Brown Eggs"
+    },
+    "publish": true
+  },
+  {
+    "name": "Amul Fresh Paneer",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/paneer.jpg"],
+    "categoryName": "Dairy, Bread & Eggs",
+    "subCategoryName": "Paneer & Tofu",
+    "unit": "200 g",
+    "stock": 80,
+    "price": 90,
+    "discount": 5,
+    "description": "Fresh and soft paneer",
+    "more_details": {
+      "brand": "Amul"
+    },
+    "publish": true
+  },
+  {
+    "name": "Lays Classic Salted Chips",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/lays-classic.jpg"],
+    "categoryName": "Snacks & Munchies",
+    "subCategoryName": "Chips & Crisps",
+    "unit": "90 g",
+    "stock": 250,
+    "price": 40,
+    "discount": 10,
+    "description": "Classic salted potato chips",
+    "more_details": {
+      "brand": "Lays",
+      "flavor": "Salted"
+    },
+    "publish": true
+  },
+  {
+    "name": "Kurkure Masala Munch",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/kurkure.jpg"],
+    "categoryName": "Snacks & Munchies",
+    "subCategoryName": "Namkeen",
+    "unit": "85 g",
+    "stock": 180,
+    "price": 20,
+    "discount": 0,
+    "description": "Crunchy masala flavored snack",
+    "more_details": {
+      "brand": "Kurkure"
+    },
+    "publish": true
+  },
+  {
+    "name": "Coca-Cola",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/coca-cola.jpg"],
+    "categoryName": "Cold Drinks & Juices",
+    "subCategoryName": "Energy & Soft Drinks",
+    "unit": "750 ml",
+    "stock": 300,
+    "price": 40,
+    "discount": 0,
+    "description": "Refreshing carbonated soft drink",
+    "more_details": {
+      "brand": "Coca-Cola"
+    },
+    "publish": true
+  },
+  {
+    "name": "Real Fruit Juice - Orange",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/real-orange.jpg"],
+    "categoryName": "Cold Drinks & Juices",
+    "subCategoryName": "Fruit Juices",
+    "unit": "1 L",
+    "stock": 100,
+    "price": 110,
+    "discount": 5,
+    "description": "Fresh orange juice",
+    "more_details": {
+      "brand": "Real"
+    },
+    "publish": true
+  },
+  {
+    "name": "Aashirvaad Atta",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/aashirvaad.jpg"],
+    "categoryName": "Atta, Rice & Dal",
+    "subCategoryName": "Atta & Flour",
+    "unit": "5 kg",
+    "stock": 120,
+    "price": 285,
+    "discount": 3,
+    "description": "100% whole wheat atta",
+    "more_details": {
+      "brand": "Aashirvaad"
+    },
+    "publish": true
+  },
+  {
+    "name": "India Gate Basmati Rice",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/basmati-rice.jpg"],
+    "categoryName": "Atta, Rice & Dal",
+    "subCategoryName": "Rice",
+    "unit": "5 kg",
+    "stock": 90,
+    "price": 550,
+    "discount": 5,
+    "description": "Premium basmati rice",
+    "more_details": {
+      "brand": "India Gate"
+    },
+    "publish": true
+  },
+  {
+    "name": "Toor Dal",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/toor-dal.jpg"],
+    "categoryName": "Atta, Rice & Dal",
+    "subCategoryName": "Dal & Pulses",
+    "unit": "1 kg",
+    "stock": 150,
+    "price": 140,
+    "discount": 0,
+    "description": "Quality toor dal",
+    "more_details": {},
+    "publish": true
+  },
+  {
+    "name": "Parle-G Biscuits",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/parle-g.jpg"],
+    "categoryName": "Bakery & Biscuits",
+    "subCategoryName": "Biscuits",
+    "unit": "800 g",
+    "stock": 220,
+    "price": 40,
+    "discount": 0,
+    "description": "Classic glucose biscuits",
+    "more_details": {
+      "brand": "Parle"
+    },
+    "publish": true
+  },
+  {
+    "name": "Britannia Good Day Cookies",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/good-day.jpg"],
+    "categoryName": "Bakery & Biscuits",
+    "subCategoryName": "Cookies",
+    "unit": "100 g",
+    "stock": 180,
+    "price": 30,
+    "discount": 5,
+    "description": "Butter cookies",
+    "more_details": {
+      "brand": "Britannia"
+    },
+    "publish": true
+  },
+  {
+    "name": "Maggi 2-Minute Noodles",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/maggi.jpg"],
+    "categoryName": "Breakfast & Instant Food",
+    "subCategoryName": "Noodles & Pasta",
+    "unit": "560 g (Pack of 8)",
+    "stock": 160,
+    "price": 112,
+    "discount": 0,
+    "description": "Instant noodles masala flavor",
+    "more_details": {
+      "brand": "Maggi"
+    },
+    "publish": true
+  },
+  {
+    "name": "Dairy Milk Chocolate",
+    "image": ["https://res.cloudinary.com/demo/image/upload/v1/dairy-milk.jpg"],
+    "categoryName": "Sweet Tooth",
+    "subCategoryName": "Chocolates",
+    "unit": "55 g",
+    "stock": 280,
+    "price": 50,
+    "discount": 0,
+    "description": "Smooth milk chocolate",
+    "more_details": {
+      "brand": "Cadbury"
+    },
+    "publish": true
+  }
+]
