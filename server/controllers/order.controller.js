@@ -206,3 +206,67 @@ export async function getOrderDetailsController(request,response){
         })
     }
 }
+
+// Verify and process payment after redirect from Stripe
+export async function verifyPaymentController(request,response){
+    try {
+        const { sessionId } = request.body
+        const userId = request.userId
+
+        if(!sessionId){
+            return response.status(400).json({
+                message : "Session ID is required",
+                error : true,
+                success : false
+            })
+        }
+
+        // Retrieve session from Stripe
+        const session = await Stripe.checkout.sessions.retrieve(sessionId)
+
+        if(session.payment_status === 'paid'){
+            // Get line items
+            const lineItems = await Stripe.checkout.sessions.listLineItems(sessionId)
+            
+            // Create order products
+            const orderProduct = await getOrderProductItems({
+                lineItems : lineItems,
+                userId : session.metadata.userId,
+                addressId : session.metadata.addressId,
+                paymentId : session.payment_intent,
+                payment_status : session.payment_status,
+            })
+
+            // Insert orders
+            const order = await OrderModel.insertMany(orderProduct)
+
+            if(order && order.length > 0){
+                // Clear cart
+                await UserModel.findByIdAndUpdate(userId, {
+                    shopping_cart : []
+                })
+                await CartProductModel.deleteMany({ userId : userId })
+
+                return response.json({
+                    message : "Payment verified and order created",
+                    error : false,
+                    success : true,
+                    data : order
+                })
+            }
+        }
+
+        return response.status(400).json({
+            message : "Payment not completed",
+            error : true,
+            success : false
+        })
+
+    } catch (error) {
+        return response.status(500).json({
+            message : error.message || error,
+            error : true,
+            success : false
+        })
+    }
+}

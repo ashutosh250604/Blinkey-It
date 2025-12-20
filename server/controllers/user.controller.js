@@ -3,7 +3,7 @@ import UserModel from '../models/user.model.js'
 import bcryptjs from 'bcryptjs'
 import verifyEmailTemplate from '../utils/verifyEmailTemplate.js'
 import generatedAccessToken from '../utils/generatedAccessToken.js'
-import genertedRefreshToken from '../utils/generatedRefreshToken.js'
+import generatedRefreshToken from '../utils/generatedRefreshToken.js'
 import uploadImageClodinary from '../utils/uploadImageClodinary.js'
 import generatedOtp from '../utils/generatedOtp.js'
 import forgotPasswordTemplate from '../utils/forgotPasswordTemplate.js'
@@ -47,7 +47,7 @@ export async function registerUserController(request,response){
 
         const verifyEmail = await sendEmail({
             sendTo : email,
-            subject : "Verify email from binkeyit",
+            subject : "Verify email from Blinkey It",
             html : verifyEmailTemplate({
                 name,
                 url : VerifyEmailUrl
@@ -145,7 +145,7 @@ export async function loginController(request,response){
         }
 
         const accesstoken = await generatedAccessToken(user._id)
-        const refreshToken = await genertedRefreshToken(user._id)
+        const refreshToken = await generatedRefreshToken(user._id)
 
         const updateUser = await UserModel.findByIdAndUpdate(user?._id,{
             last_login_date : new Date()
@@ -301,9 +301,14 @@ export async function forgotPasswordController(request,response) {
             forgot_password_expiry : new Date(expireTime).toISOString()
         })
 
+        // Log OTP in development for testing
+        if(process.env.NODE_ENV === 'development') {
+            console.log('🔐 OTP for', email, ':', otp)
+        }
+
         await sendEmail({
             sendTo : email,
-            subject : "Forgot password from Binkeyit",
+            subject : "Forgot password from Blinkey It",
             html : forgotPasswordTemplate({
                 name : user.name,
                 otp : otp

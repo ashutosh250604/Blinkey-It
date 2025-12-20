@@ -8,7 +8,8 @@ const fetchUserDetails = async()=>{
         })
         return response.data
     } catch (error) {
-        console.log(error)
+        // Error handled by Axios interceptor
+        return null
     }
 }
 

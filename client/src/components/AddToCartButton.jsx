@@ -85,16 +85,47 @@ const AddToCartButton = ({ data }) => {
         <div className='w-full max-w-[150px]'>
             {
                 isAvailableCart ? (
-                    <div className='flex w-full h-full'>
-                        <button onClick={decreaseQty} className='bg-green-600 hover:bg-green-700 text-white flex-1 w-full p-1 rounded flex items-center justify-center'><FaMinus /></button>
+                    <div className='flex items-center gap-1 bg-white border-2 border-green-600 rounded-lg overflow-hidden shadow-sm'>
+                        <button 
+                            onClick={decreaseQty} 
+                            className='bg-green-600 hover:bg-green-700 text-white p-2 transition-all duration-200 active:scale-95 hover:shadow-md'
+                            aria-label="Decrease quantity"
+                        >
+                            <FaMinus size={12} />
+                        </button>
 
-                        <p className='flex-1 w-full font-semibold px-1 flex items-center justify-center'>{qty}</p>
+                        <div className='flex-1 px-3 text-center'>
+                            <span className='font-bold text-green-600 text-lg'>{qty}</span>
+                        </div>
 
-                        <button onClick={increaseQty} className='bg-green-600 hover:bg-green-700 text-white flex-1 w-full p-1 rounded flex items-center justify-center'><FaPlus /></button>
+                        <button 
+                            onClick={increaseQty} 
+                            className='bg-green-600 hover:bg-green-700 text-white p-2 transition-all duration-200 active:scale-95 hover:shadow-md'
+                            aria-label="Increase quantity"
+                        >
+                            <FaPlus size={12} />
+                        </button>
                     </div>
                 ) : (
-                    <button onClick={handleADDTocart} className='bg-green-600 hover:bg-green-700 text-white px-2 lg:px-4 py-1 rounded'>
-                        {loading ? <Loading /> : "Add"}
+                    <button 
+                        onClick={handleADDTocart} 
+                        disabled={loading}
+                        className='w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-4 py-2 rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-300 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2'
+                    >
+                        {loading ? (
+                            <>
+                                <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                <span>Adding...</span>
+                            </>
+                        ) : (
+                            <>
+                                <FaPlus size={14} />
+                                <span>Add</span>
+                            </>
+                        )}
                     </button>
                 )
             }

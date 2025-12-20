@@ -24,7 +24,7 @@ Axios.interceptors.request.use(
 
 //extend the life span of access token with 
 // the help refresh
-Axios.interceptors.request.use(
+Axios.interceptors.response.use(
     (response)=>{
         return response
     },
@@ -64,7 +64,11 @@ const refreshAccessToken = async(refreshToken)=>{
         localStorage.setItem('accesstoken',accessToken)
         return accessToken
     } catch (error) {
-        console.log(error)
+        // Refresh token failed, redirect to login
+        localStorage.removeItem('accesstoken')
+        localStorage.removeItem('refreshToken')
+        window.location.href = '/login'
+        return null
     }
 }
 

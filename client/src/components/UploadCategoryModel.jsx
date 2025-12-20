@@ -18,11 +18,8 @@ const UploadCategoryModel = ({ close, fetchData }) => {
         const file = e.target.files?.[0]
         
         if (!file) {
-            console.log('No file selected')
             return
         }
-
-        console.log('File selected:', file.name, 'Size:', file.size, 'Type:', file.type)
 
         // Validate file type
         if (!file.type.startsWith('image/')) {
@@ -38,13 +35,10 @@ const UploadCategoryModel = ({ close, fetchData }) => {
 
         try {
             setLoading(true)
-            console.log('Starting upload...')
             
             // Create FormData
             const formData = new FormData()
             formData.append('image', file)
-
-            console.log('Calling upload API...')
 
             // Make API call
             const response = await Axios({
@@ -52,11 +46,8 @@ const UploadCategoryModel = ({ close, fetchData }) => {
                 data: formData
             })
 
-            console.log('Upload response:', response)
-
             // SAFE access to response data
             if (response && response.data) {
-                console.log('Response data:', response.data)
                 
                 if (response.data.success && response.data.data && response.data.data.url) {
                     // Success!
@@ -65,26 +56,16 @@ const UploadCategoryModel = ({ close, fetchData }) => {
                         image: response.data.data.url
                     }))
                     toast.success('Image uploaded successfully! ✅')
-                    console.log('Image URL saved:', response.data.data.url)
                 } else {
                     // API returned but without expected data
-                    console.error('Unexpected response structure:', response.data)
                     toast.error(response.data.message || 'Upload failed - unexpected response')
                 }
             } else {
                 // No response data at all
-                console.error('No response data received')
                 toast.error('Upload failed - no response from server')
             }
 
         } catch (error) {
-            console.error('Upload error details:', {
-                message: error.message,
-                response: error.response,
-                status: error.response?.status,
-                data: error.response?.data
-            })
-
             // Handle different error types
             if (error.response) {
                 // Server responded with error
@@ -120,11 +101,8 @@ const UploadCategoryModel = ({ close, fetchData }) => {
 
     // Trigger file input
     const handleUploadClick = () => {
-        console.log('Upload button clicked')
         if (fileInputRef.current) {
             fileInputRef.current.click()
-        } else {
-            console.error('File input ref not found')
         }
     }
 
@@ -144,8 +122,6 @@ const UploadCategoryModel = ({ close, fetchData }) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        console.log('Submitting category:', data)
-
         // Validation
         if (!data.name) {
             toast.error('Please enter category name')
@@ -160,14 +136,10 @@ const UploadCategoryModel = ({ close, fetchData }) => {
         try {
             setLoading(true)
 
-            console.log('Creating category...')
-
             const response = await Axios({
                 ...SummaryApi.addCategory,
                 data: data
             })
-
-            console.log('Create category response:', response)
 
             // Safe access
             if (response?.data?.success) {
@@ -181,7 +153,6 @@ const UploadCategoryModel = ({ close, fetchData }) => {
             }
 
         } catch (error) {
-            console.error('Create category error:', error)
             
             if (error.response?.data?.message) {
                 toast.error(error.response.data.message)

@@ -13,8 +13,6 @@ const OtpVerification = () => {
     const inputRef = useRef([])
     const location = useLocation()
 
-    console.log("location",location)
-
     useEffect(()=>{
         if(!location?.state?.email){
             navigate("/forgot-password")
@@ -51,7 +49,6 @@ const OtpVerification = () => {
             }
 
         } catch (error) {
-            console.log('error',error)
             AxiosToastError(error)
         }
 
@@ -81,8 +78,6 @@ const OtpVerification = () => {
                                             value={data[index]}
                                             onChange={(e)=>{
                                                 const value =  e.target.value
-                                                console.log("value",value)
-
                                                 const newData = [...data]
                                                 newData[index] = value
                                                 setData(newData)

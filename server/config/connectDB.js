@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
+import logger from '../utils/logger.js'
 dotenv.config()
 
 if(!process.env.MONGODB_URI){
@@ -10,10 +11,14 @@ if(!process.env.MONGODB_URI){
 
 async function connectDB(){
     try {
-        await mongoose.connect(process.env.MONGODB_URI)
-        console.log("connect DB")
+        await mongoose.connect(process.env.MONGODB_URI, {
+            maxPoolSize: 10,
+            serverSelectionTimeoutMS: 5000,
+            socketTimeoutMS: 45000,
+        })
+        logger.info("Database connected successfully")
     } catch (error) {
-        console.log("Mongodb connect error",error)
+        logger.error("MongoDB connection error:", error)
         process.exit(1)
     }
 }

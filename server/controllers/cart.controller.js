@@ -7,7 +7,7 @@ export const addToCartItemController = async(request,response)=>{
         const { productId } = request.body
         
         if(!productId){
-            return response.status(402).json({
+            return response.status(400).json({
                 message : "Provide productId",
                 error : true,
                 success : false

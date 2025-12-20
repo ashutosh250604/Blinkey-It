@@ -54,7 +54,7 @@ const ProductDisplayPage = () => {
   const handleScrollLeft = ()=>{
     imageContainer.current.scrollLeft -= 100
   }
-  console.log("product data",data)
+  
   return (
     <section className='container mx-auto p-4 grid lg:grid-cols-2 '>
         <div className=''>
@@ -143,7 +143,7 @@ const ProductDisplayPage = () => {
                 }
                 {
                   data.discount && (
-                    <p className="font-bold text-green-600 lg:text-2xl">{data.discount}% <span className='text-base text-neutral-500'>Discount</span></p>
+                    <p className="font-bold text-green-600 lg:text-2xl">{data.discount}% <span className='text-base text-gray-700'>Discount</span></p>
                   )
                 }
                 
@@ -164,7 +164,7 @@ const ProductDisplayPage = () => {
               }
            
 
-            <h2 className='font-semibold'>Why shop from binkeyit? </h2>
+            <h2 className='font-semibold'>Why shop on Blinkey It? </h2>
             <div>
                   <div className='flex  items-center gap-4 my-4'>
                       <img

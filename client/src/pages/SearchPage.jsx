@@ -14,8 +14,8 @@ const SearchPage = () => {
   const loadingArrayCard = new Array(10).fill(null)
   const [page,setPage] = useState(1)
   const [totalPage,setTotalPage] = useState(1)
-  const params = useLocation()
-  const searchText = params?.search?.slice(3)
+  const location = useLocation()
+  const searchText = new URLSearchParams(location.search).get('q') || ''
 
   const fetchData = async() => {
     try {
@@ -42,7 +42,6 @@ const SearchPage = () => {
               })
             }
             setTotalPage(responseData.totalPage)
-            console.log(responseData)
         }
     } catch (error) {
         AxiosToastError(error)
@@ -52,10 +51,12 @@ const SearchPage = () => {
   }
 
   useEffect(()=>{
+    setPage(1)
+  },[searchText])
+
+  useEffect(()=>{
     fetchData()
   },[page,searchText])
-
-  console.log("page",page)
 
   const handleFetchMore = ()=>{
     if(totalPage > page){
