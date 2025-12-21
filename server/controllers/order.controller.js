@@ -150,8 +150,6 @@ export async function webhookStripe(request,response){
     const event = request.body;
     const endPointSecret = process.env.STRIPE_ENPOINT_WEBHOOK_SECRET_KEY
 
-    console.log("event",event)
-
     // Handle the event
   switch (event.type) {
     case 'checkout.session.completed':
@@ -169,7 +167,6 @@ export async function webhookStripe(request,response){
     
       const order = await OrderModel.insertMany(orderProduct)
 
-        console.log(order)
         if(Boolean(order[0])){
             const removeCartItems = await  UserModel.findByIdAndUpdate(userId,{
                 shopping_cart : []
@@ -178,7 +175,8 @@ export async function webhookStripe(request,response){
         }
       break;
     default:
-      console.log(`Unhandled event type ${event.type}`);
+      // Unhandled event type
+      break;
   }
 
   // Return a response to acknowledge receipt of the event

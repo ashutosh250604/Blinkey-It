@@ -94,7 +94,6 @@ export const updateSubCategoryController = async(request,response)=>{
 export const deleteSubCategoryController = async(request,response)=>{
     try {
         const { _id } = request.body 
-        console.log("Id",_id)
         const deleteSub = await SubCategoryModel.findByIdAndDelete(_id)
 
         return response.json({

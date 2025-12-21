@@ -301,11 +301,6 @@ export async function forgotPasswordController(request,response) {
             forgot_password_expiry : new Date(expireTime).toISOString()
         })
 
-        // Log OTP in development for testing
-        if(process.env.NODE_ENV === 'development') {
-            console.log('🔐 OTP for', email, ':', otp)
-        }
-
         await sendEmail({
             sendTo : email,
             subject : "Forgot password from Blinkey It",
@@ -504,8 +499,6 @@ export async function refreshToken(request,response){
 export async function userDetails(request,response){
     try {
         const userId  = request.userId
-
-        console.log(userId)
 
         const user = await UserModel.findById(userId).select('-password -refresh_token')
 
