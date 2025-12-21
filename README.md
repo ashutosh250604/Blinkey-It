@@ -192,6 +192,14 @@ These files are NOT needed for local development. They're included for productio
 
 ## 🎯 Usage
 
+### As an Admin:
+1. Login with admin credentials
+2. Access Admin Panel
+3. Manage categories, subcategories, and products
+4. Upload product images
+5. View and manage orders
+
+
 ### As a User:
 1. Register a new account
 2. Browse products by category
@@ -200,30 +208,12 @@ These files are NOT needed for local development. They're included for productio
 5. Complete payment with test card: `4242 4242 4242 4242`
 6. View your orders in the dashboard
 
-### As an Admin:
-1. Login with admin credentials
-2. Access Admin Panel
-3. Manage categories, subcategories, and products
-4. Upload product images
-5. View and manage orders
-
-## 🔒 Security Notes
+## Notes
 
 - Never commit `.env` files to GitHub
 - Keep your API keys and secrets secure
 - Use environment variables for all sensitive data
 - The `.gitignore` is configured to exclude sensitive files
-
-## 📝 Available Scripts
-
-### Backend (server/)
-- `npm run dev` - Start development server with nodemon
-- `npm start` - Start production server
-
-### Frontend (client/)
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
 
 ## 🤝 Contributing
 
@@ -237,11 +227,11 @@ These files are NOT needed for local development. They're included for productio
 
 This project is licensed under the MIT License.
 
-## 🙋‍♂️ Support
+## Support
 
-For support, email support@blinkeyit.com or create an issue in the repository.
+For support, or create an issue in the repository.
 
-## 🎉 Acknowledgments
+## Acknowledgments
 
 - Images hosted on Cloudinary
 - Payment processing by Stripe
@@ -249,7 +239,5 @@ For support, email support@blinkeyit.com or create an issue in the repository.
 - UI components built with Tailwind CSS
 
 ---
-
-Made with ❤️ by Blinkey It Team
 
 Inspired by - Youtube : Dynamic Coding with Amit
